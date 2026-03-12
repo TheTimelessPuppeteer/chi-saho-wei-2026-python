@@ -1,12 +1,4 @@
 # R13. 字典列表排序 itemgetter（1.13）
-
-from operator import itemgetter
-
-rows = [{'fname': 'Brian', 'uid': 1003}, {'fname': 'John', 'uid': 1001}]
-sorted(rows, key=itemgetter('fname'))
-sorted(rows, key=itemgetter('uid'))
-sorted(rows, key=itemgetter('uid', 'fname'))
-# R13. 字典列表排序 itemgetter（1.13）
 # 此範例展示如何使用 operator 模組中的 itemgetter 函數
 # 來對字典列表進行排序
 
