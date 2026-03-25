@@ -1,0 +1,27 @@
+Target: hand_10050.py
+py_compile returncode: 0
+py_compile stderr:
+(none)
+
+run command: python3 hand_10050.py
+input:
+2
+14
+3
+3
+4
+8
+100
+4
+12
+15
+25
+40
+returncode: 0
+stdout:
+5
+15
+stderr:
+(empty)
+expected_stdout: '5\n15'
+stdout_match: True

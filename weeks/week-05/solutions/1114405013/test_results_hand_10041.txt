@@ -1,0 +1,20 @@
+Target: hand_10041.py
+py_compile returncode: 0
+py_compile stderr:
+(none)
+
+run command: python3 hand_10041.py
+input:
+3
+2 2 4
+3 2 4 6
+4 1 2 3 4
+returncode: 0
+stdout:
+2
+4
+4
+stderr:
+(empty)
+expected_stdout: '2\n4\n4'
+stdout_match: True
