@@ -1,0 +1,10 @@
+test_empty_line_content_is_allowed (weeks.week-04.solutions.1114405013.test_hand_10008.TestHand10008.test_empty_line_content_is_allowed) ... ok
+test_ignore_non_letters (weeks.week-04.solutions.1114405013.test_hand_10008.TestHand10008.test_ignore_non_letters) ... ok
+test_mixed_case_and_frequency_sorting (weeks.week-04.solutions.1114405013.test_hand_10008.TestHand10008.test_mixed_case_and_frequency_sorting) ... ok
+test_tie_breaker_by_alphabet (weeks.week-04.solutions.1114405013.test_hand_10008.TestHand10008.test_tie_breaker_by_alphabet) ... ok
+test_zero_lines_input (weeks.week-04.solutions.1114405013.test_hand_10008.TestHand10008.test_zero_lines_input) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.095s
+
+OK

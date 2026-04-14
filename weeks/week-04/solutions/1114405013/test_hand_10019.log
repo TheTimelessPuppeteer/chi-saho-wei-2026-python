@@ -1,0 +1,10 @@
+test_basic_difference (weeks.week-04.solutions.1114405013.test_hand_10019.TestHand10019.test_basic_difference) ... ok
+test_extra_spaces_and_blank_lines (weeks.week-04.solutions.1114405013.test_hand_10019.TestHand10019.test_extra_spaces_and_blank_lines) ... ok
+test_large_values_near_2_power_63 (weeks.week-04.solutions.1114405013.test_hand_10019.TestHand10019.test_large_values_near_2_power_63) ... ok
+test_multiple_lines_until_eof (weeks.week-04.solutions.1114405013.test_hand_10019.TestHand10019.test_multiple_lines_until_eof) ... ok
+test_swapped_order_still_positive (weeks.week-04.solutions.1114405013.test_hand_10019.TestHand10019.test_swapped_order_still_positive) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.093s
+
+OK

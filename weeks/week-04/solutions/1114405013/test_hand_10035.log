@@ -1,0 +1,10 @@
+test_different_digit_lengths (weeks.week-04.solutions.1114405013.test_hand_10035.TestHand10035.test_different_digit_lengths) ... ok
+test_extra_spaces_and_blank_lines (weeks.week-04.solutions.1114405013.test_hand_10035.TestHand10035.test_extra_spaces_and_blank_lines) ... ok
+test_leading_zeros_input (weeks.week-04.solutions.1114405013.test_hand_10035.TestHand10035.test_leading_zeros_input) ... ok
+test_no_output_when_first_line_is_terminator (weeks.week-04.solutions.1114405013.test_hand_10035.TestHand10035.test_no_output_when_first_line_is_terminator) ... ok
+test_sample_style_mixed_cases (weeks.week-04.solutions.1114405013.test_hand_10035.TestHand10035.test_sample_style_mixed_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.093s
+
+OK

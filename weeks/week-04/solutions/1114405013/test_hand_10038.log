@@ -1,0 +1,10 @@
+test_classic_jolly_case (weeks.week-04.solutions.1114405013.test_hand_10038.TestHand10038.test_classic_jolly_case) ... ok
+test_classic_not_jolly_case (weeks.week-04.solutions.1114405013.test_hand_10038.TestHand10038.test_classic_not_jolly_case) ... ok
+test_duplicate_differences_not_jolly (weeks.week-04.solutions.1114405013.test_hand_10038.TestHand10038.test_duplicate_differences_not_jolly) ... ok
+test_multiple_lines_and_whitespace_tolerance (weeks.week-04.solutions.1114405013.test_hand_10038.TestHand10038.test_multiple_lines_and_whitespace_tolerance) ... ok
+test_single_number_sequence_is_jolly (weeks.week-04.solutions.1114405013.test_hand_10038.TestHand10038.test_single_number_sequence_is_jolly) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.138s
+
+OK

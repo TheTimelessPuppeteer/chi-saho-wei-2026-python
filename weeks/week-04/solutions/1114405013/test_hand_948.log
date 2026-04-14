@@ -1,0 +1,10 @@
+test_ambiguous_case_returns_zero (weeks.week-04.solutions.1114405013.test_hand_948.TestHand948.test_ambiguous_case_returns_zero) ... ok
+test_input_with_extra_blank_lines (weeks.week-04.solutions.1114405013.test_hand_948.TestHand948.test_input_with_extra_blank_lines) ... ok
+test_multiple_cases_require_blank_line_between_outputs (weeks.week-04.solutions.1114405013.test_hand_948.TestHand948.test_multiple_cases_require_blank_line_between_outputs) ... ok
+test_single_case_unique_heavier (weeks.week-04.solutions.1114405013.test_hand_948.TestHand948.test_single_case_unique_heavier) ... ok
+test_single_case_unique_lighter (weeks.week-04.solutions.1114405013.test_hand_948.TestHand948.test_single_case_unique_lighter) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.089s
+
+OK
