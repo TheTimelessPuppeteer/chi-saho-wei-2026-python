@@ -1,0 +1,10 @@
+test_all_mines_grid (weeks.week-08.solutions.1114405013.test_hand_10189.TestHand10189.test_all_mines_grid) ... ok
+test_edge_and_corner_neighbor_counting (weeks.week-08.solutions.1114405013.test_hand_10189.TestHand10189.test_edge_and_corner_neighbor_counting) ... ok
+test_problem_sample_two_fields (weeks.week-08.solutions.1114405013.test_hand_10189.TestHand10189.test_problem_sample_two_fields) ... ok
+test_single_cell_empty (weeks.week-08.solutions.1114405013.test_hand_10189.TestHand10189.test_single_cell_empty) ... ok
+test_single_cell_mine (weeks.week-08.solutions.1114405013.test_hand_10189.TestHand10189.test_single_cell_mine) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.092s
+
+OK

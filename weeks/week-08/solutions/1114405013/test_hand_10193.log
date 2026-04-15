@@ -1,0 +1,10 @@
+test_input_with_spaces (weeks.week-08.solutions.1114405013.test_hand_10193.TestHand10193.test_input_with_spaces) ... ok
+test_known_small_values (weeks.week-08.solutions.1114405013.test_hand_10193.TestHand10193.test_known_small_values) ... ok
+test_output_is_integer_only (weeks.week-08.solutions.1114405013.test_hand_10193.TestHand10193.test_output_is_integer_only) ... ok
+test_upper_bound_value (weeks.week-08.solutions.1114405013.test_hand_10193.TestHand10193.test_upper_bound_value) ... ok
+test_various_values_against_reference (weeks.week-08.solutions.1114405013.test_hand_10193.TestHand10193.test_various_values_against_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.241s
+
+OK

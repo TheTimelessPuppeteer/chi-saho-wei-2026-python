@@ -1,0 +1,10 @@
+test_basic_letters (weeks.week-08.solutions.1114405013.test_hand_10222.TestHand10222.test_basic_letters) ... ok
+test_digits_and_symbols (weeks.week-08.solutions.1114405013.test_hand_10222.TestHand10222.test_digits_and_symbols) ... ok
+test_multiple_lines_until_eof (weeks.week-08.solutions.1114405013.test_hand_10222.TestHand10222.test_multiple_lines_until_eof) ... ok
+test_sentence_with_spaces (weeks.week-08.solutions.1114405013.test_hand_10222.TestHand10222.test_sentence_with_spaces) ... ok
+test_uppercase_preserved (weeks.week-08.solutions.1114405013.test_hand_10222.TestHand10222.test_uppercase_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.122s
+
+OK

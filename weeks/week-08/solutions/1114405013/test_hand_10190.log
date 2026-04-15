@@ -1,0 +1,10 @@
+test_full_coverage_and_rounding (weeks.week-08.solutions.1114405013.test_hand_10190.TestHand10190.test_full_coverage_and_rounding) ... ok
+test_no_umbrella_baseline (weeks.week-08.solutions.1114405013.test_hand_10190.TestHand10190.test_no_umbrella_baseline) ... ok
+test_single_moving_umbrella_same_covered_length (weeks.week-08.solutions.1114405013.test_hand_10190.TestHand10190.test_single_moving_umbrella_same_covered_length) ... ok
+test_single_stationary_umbrella (weeks.week-08.solutions.1114405013.test_hand_10190.TestHand10190.test_single_stationary_umbrella) ... ok
+test_two_stationary_umbrellas_with_overlap (weeks.week-08.solutions.1114405013.test_hand_10190.TestHand10190.test_two_stationary_umbrellas_with_overlap) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.090s
+
+OK
