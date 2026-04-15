@@ -1,0 +1,10 @@
+test_duplicate_addresses (weeks.week-05.solutions.1114405013.test_hand_10041.TestHand10041.test_duplicate_addresses) ... ok
+test_even_count_addresses (weeks.week-05.solutions.1114405013.test_hand_10041.TestHand10041.test_even_count_addresses) ... ok
+test_multiple_testcases (weeks.week-05.solutions.1114405013.test_hand_10041.TestHand10041.test_multiple_testcases) ... ok
+test_odd_count_addresses (weeks.week-05.solutions.1114405013.test_hand_10041.TestHand10041.test_odd_count_addresses) ... ok
+test_single_relative (weeks.week-05.solutions.1114405013.test_hand_10041.TestHand10041.test_single_relative) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.089s
+
+OK

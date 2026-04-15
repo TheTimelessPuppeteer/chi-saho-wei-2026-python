@@ -1,0 +1,10 @@
+test_probability_one_boundary (weeks.week-05.solutions.1114405013.test_hand_10056.TestHand10056.test_probability_one_boundary) ... ok
+test_single_player_always_wins (weeks.week-05.solutions.1114405013.test_hand_10056.TestHand10056.test_single_player_always_wins) ... ok
+test_three_players_normal_case (weeks.week-05.solutions.1114405013.test_hand_10056.TestHand10056.test_three_players_normal_case) ... ok
+test_two_players_equal_success_probability (weeks.week-05.solutions.1114405013.test_hand_10056.TestHand10056.test_two_players_equal_success_probability) ... ok
+test_zero_probability_never_wins (weeks.week-05.solutions.1114405013.test_hand_10056.TestHand10056.test_zero_probability_never_wins) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.086s
+
+OK

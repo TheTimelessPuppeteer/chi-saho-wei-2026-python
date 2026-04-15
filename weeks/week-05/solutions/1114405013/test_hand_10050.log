@@ -1,0 +1,10 @@
+test_larger_day_range (weeks.week-05.solutions.1114405013.test_hand_10050.TestHand10050.test_larger_day_range) ... ok
+test_multiple_testcases_in_one_input (weeks.week-05.solutions.1114405013.test_hand_10050.TestHand10050.test_multiple_testcases_in_one_input) ... ok
+test_official_example_style_case (weeks.week-05.solutions.1114405013.test_hand_10050.TestHand10050.test_official_example_style_case) ... ok
+test_overlap_should_count_once (weeks.week-05.solutions.1114405013.test_hand_10050.TestHand10050.test_overlap_should_count_once) ... ok
+test_skip_friday_and_saturday (weeks.week-05.solutions.1114405013.test_hand_10050.TestHand10050.test_skip_friday_and_saturday) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.171s
+
+OK

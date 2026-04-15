@@ -1,0 +1,10 @@
+test_basic_query_then_flip (weeks.week-05.solutions.1114405013.test_hand_10055.TestHand10055.test_basic_query_then_flip) ... ok
+test_flip_same_index_twice (weeks.week-05.solutions.1114405013.test_hand_10055.TestHand10055.test_flip_same_index_twice) ... ok
+test_no_query_outputs_empty (weeks.week-05.solutions.1114405013.test_hand_10055.TestHand10055.test_no_query_outputs_empty) ... ok
+test_range_parity_changes (weeks.week-05.solutions.1114405013.test_hand_10055.TestHand10055.test_range_parity_changes) ... ok
+test_single_function_boundary (weeks.week-05.solutions.1114405013.test_hand_10055.TestHand10055.test_single_function_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.106s
+
+OK

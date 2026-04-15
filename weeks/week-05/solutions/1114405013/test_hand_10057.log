@@ -1,0 +1,10 @@
+test_all_values_same (weeks.week-05.solutions.1114405013.test_hand_10057.TestHand10057.test_all_values_same) ... ok
+test_even_count_distinct_middle_values (weeks.week-05.solutions.1114405013.test_hand_10057.TestHand10057.test_even_count_distinct_middle_values) ... ok
+test_multiple_cases_until_eof (weeks.week-05.solutions.1114405013.test_hand_10057.TestHand10057.test_multiple_cases_until_eof) ... ok
+test_odd_count_with_repeated_median (weeks.week-05.solutions.1114405013.test_hand_10057.TestHand10057.test_odd_count_with_repeated_median) ... ok
+test_single_value_case (weeks.week-05.solutions.1114405013.test_hand_10057.TestHand10057.test_single_value_case) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.124s
+
+OK
