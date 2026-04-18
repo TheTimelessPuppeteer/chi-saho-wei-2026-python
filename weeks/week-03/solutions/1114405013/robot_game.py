@@ -14,20 +14,33 @@ GRID_H = 3
 
 CELL = 90
 MARGIN = 40
-HUD_H = 140
+PANEL_GAP = 18
+PANEL_W = 260
 
-SCREEN_W = MARGIN * 2 + (GRID_W + 1) * CELL
-SCREEN_H = MARGIN * 2 + (GRID_H + 1) * CELL + HUD_H
+WINDOW_SCALE = 1.2
+BASE_BOARD_W = MARGIN * 2 + (GRID_W + 1) * CELL
+BASE_BOARD_H = MARGIN * 2 + (GRID_H + 1) * CELL
+BASE_SCREEN_W = BASE_BOARD_W + PANEL_GAP + PANEL_W + MARGIN
+BASE_SCREEN_H = BASE_BOARD_H
+SCREEN_W = int(BASE_SCREEN_W * WINDOW_SCALE)
+SCREEN_H = int(BASE_SCREEN_H * WINDOW_SCALE)
 
-BG_COLOR = (24, 26, 34)
-GRID_COLOR = (90, 96, 120)
+BG_COLOR = (7, 18, 14)
+BOARD_FILL_COLOR = (10, 28, 22)
+GRID_COLOR = (42, 122, 90)
+GRID_BOLD_COLOR = (71, 170, 129)
+AXIS_COLOR = (161, 245, 201)
+MATRIX_RAIN_COLOR = (50, 140, 96)
 ROBOT_BODY_COLOR = (78, 145, 255)
 ROBOT_HEAD_COLOR = (133, 181, 255)
 ROBOT_EYE_COLOR = (235, 245, 255)
 ROBOT_ACCENT_COLOR = (37, 84, 180)
 SCENT_COLOR = (255, 168, 0)
-TEXT_COLOR = (230, 232, 244)
+TEXT_COLOR = (200, 250, 223)
 LOST_COLOR = (255, 107, 107)
+PANEL_BG_COLOR = (12, 36, 28)
+PANEL_BORDER_COLOR = (66, 171, 126)
+COORD_TEXT_SCALE = 0.9
 
 
 @dataclass
@@ -49,19 +62,58 @@ def to_screen_pos(x: int, y: int) -> tuple[int, int]:
     return sx, sy
 
 
-def draw_grid(screen: pygame.Surface) -> None:
-    """畫地圖格線。"""
+def draw_matrix_backdrop(screen: pygame.Surface, tiny_font: pygame.font.Font) -> None:
+    """畫出數學矩陣風格的背景字元。"""
+    board_left = MARGIN
+    board_top = MARGIN
+    board_right = MARGIN + (GRID_W + 1) * CELL
+    board_bottom = MARGIN + (GRID_H + 1) * CELL
+
+    for x in range(board_left + 6, board_right - 8, 24):
+        for y in range(board_top + 6, board_bottom - 8, 22):
+            bit = "1" if ((x // 24 + y // 22) % 3) else "0"
+            glyph = tiny_font.render(bit, True, MATRIX_RAIN_COLOR)
+            glyph.set_alpha(40)
+            screen.blit(glyph, (x, y))
+
+
+def draw_grid(screen: pygame.Surface, small_font: pygame.font.Font) -> None:
+    """畫矩陣化格線，並在每格右下角顯示座標。"""
+    board_left = MARGIN
+    board_top = MARGIN
+    board_right = MARGIN + (GRID_W + 1) * CELL
+    board_bottom = MARGIN + (GRID_H + 1) * CELL
+
+    board_rect = pygame.Rect(
+        board_left, board_top, board_right - board_left, board_bottom - board_top
+    )
+    pygame.draw.rect(screen, BOARD_FILL_COLOR, board_rect)
+    pygame.draw.rect(screen, GRID_BOLD_COLOR, board_rect, 2)
+
     for x in range(GRID_W + 2):
-        x0 = MARGIN + x * CELL
-        y0 = MARGIN
-        y1 = MARGIN + (GRID_H + 1) * CELL
-        pygame.draw.line(screen, GRID_COLOR, (x0, y0), (x0, y1), 1)
+        x0 = board_left + x * CELL
+        width = 2 if x in (0, GRID_W + 1) else 1
+        color = GRID_BOLD_COLOR if width == 2 else GRID_COLOR
+        pygame.draw.line(screen, color, (x0, board_top), (x0, board_bottom), width)
 
     for y in range(GRID_H + 2):
-        y0 = MARGIN + y * CELL
-        x0 = MARGIN
-        x1 = MARGIN + (GRID_W + 1) * CELL
-        pygame.draw.line(screen, GRID_COLOR, (x0, y0), (x1, y0), 1)
+        y0 = board_top + y * CELL
+        width = 2 if y in (0, GRID_H + 1) else 1
+        color = GRID_BOLD_COLOR if width == 2 else GRID_COLOR
+        pygame.draw.line(screen, color, (board_left, y0), (board_right, y0), width)
+
+    # 在每個格子右下角顯示座標 (x,y)。
+    for x in range(GRID_W + 1):
+        for y in range(GRID_H + 1):
+            sx, sy = to_screen_pos(x, y)
+            label = f"({x},{y})"
+            txt = small_font.render(label, True, AXIS_COLOR)
+            scaled_w = max(1, int(txt.get_width() * COORD_TEXT_SCALE))
+            scaled_h = max(1, int(txt.get_height() * COORD_TEXT_SCALE))
+            txt = pygame.transform.smoothscale(txt, (scaled_w, scaled_h))
+            tx = sx + CELL - txt.get_width() - 5
+            ty = sy + CELL - txt.get_height() - 4
+            screen.blit(txt, (tx, ty))
 
 
 def draw_scents(screen: pygame.Surface, scents: set[tuple[int, int, str]]) -> None:
@@ -124,24 +176,61 @@ def draw_robot(screen: pygame.Surface, robot: RobotState) -> None:
 def draw_hud(
     screen: pygame.Surface,
     font: pygame.font.Font,
+    small_font: pygame.font.Font,
     robot: RobotState,
     scents: set[tuple[int, int, str]],
     replay_mode: bool,
 ) -> None:
-    """畫文字資訊。"""
-    hud_top = MARGIN + (GRID_H + 1) * CELL + 18
+    """在側邊面板畫文字資訊，每個資訊項目分行。"""
+    panel_left = MARGIN + (GRID_W + 1) * CELL + PANEL_GAP
+    panel_top = MARGIN
+    panel_right = SCREEN_W - MARGIN
+    panel_bottom = MARGIN + (GRID_H + 1) * CELL
+
+    panel_rect = pygame.Rect(
+        panel_left,
+        panel_top,
+        panel_right - panel_left,
+        panel_bottom - panel_top,
+    )
+    pygame.draw.rect(screen, PANEL_BG_COLOR, panel_rect, border_radius=10)
+    pygame.draw.rect(screen, PANEL_BORDER_COLOR, panel_rect, 2, border_radius=10)
 
     status = "LOST" if robot.lost else "ALIVE"
     mode = "REPLAY" if replay_mode else "LIVE"
-    line1 = (
-        f"Robot=({robot.x},{robot.y},{robot.direction})  Status={status}  Mode={mode}"
-    )
-    line2 = f"Scents={len(scents)} | Keys: L/R/F step, N new robot, C clear scent, P replay, S screenshot, ESC quit"
 
-    img1 = font.render(line1, True, TEXT_COLOR)
-    img2 = font.render(line2, True, TEXT_COLOR)
-    screen.blit(img1, (MARGIN, hud_top))
-    screen.blit(img2, (MARGIN, hud_top + 34))
+    title = font.render("MATRIX HUD", True, TEXT_COLOR)
+    screen.blit(title, (panel_left + 16, panel_top + 14))
+
+    info_lines = [
+        f"x = {robot.x}",
+        f"y = {robot.y}",
+        f"direction = {robot.direction}",
+        f"status = {status}",
+        f"mode = {mode}",
+        f"scents = {len(scents)}",
+        f"grid = [0..{GRID_W}] x [0..{GRID_H}]",
+    ]
+
+    y = panel_top + 54
+    for line in info_lines:
+        img = small_font.render(line, True, TEXT_COLOR)
+        screen.blit(img, (panel_left + 16, y))
+        y += 28
+
+    controls_title = small_font.render("Controls", True, PANEL_BORDER_COLOR)
+    screen.blit(controls_title, (panel_left + 16, y + 4))
+    y += 34
+
+    control_lines = [
+        "L/R/F : turn & step",
+        "N/C : new robot / clear scent",
+        "P/S/ESC : replay / shot / quit",
+    ]
+    for line in control_lines:
+        img = small_font.render(line, True, TEXT_COLOR)
+        screen.blit(img, (panel_left + 16, y))
+        y += 24
 
 
 def main() -> None:
@@ -150,6 +239,7 @@ def main() -> None:
     screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
     clock = pygame.time.Clock()
     font = pygame.font.SysFont("consolas", 20)
+    small_font = pygame.font.SysFont("consolas", 16)
 
     world = RobotWorld(GRID_W, GRID_H)
     robot = RobotState(0, 0, "N")
@@ -228,10 +318,11 @@ def main() -> None:
             show_scents = world.scents
 
         screen.fill(BG_COLOR)
-        draw_grid(screen)
+        draw_matrix_backdrop(screen, small_font)
+        draw_grid(screen, small_font)
         draw_scents(screen, show_scents)
         draw_robot(screen, show_robot)
-        draw_hud(screen, font, show_robot, show_scents, replay_mode)
+        draw_hud(screen, font, small_font, show_robot, show_scents, replay_mode)
 
         pygame.display.flip()
         clock.tick(60)
