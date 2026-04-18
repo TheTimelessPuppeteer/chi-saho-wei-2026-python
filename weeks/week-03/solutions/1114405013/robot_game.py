@@ -297,8 +297,8 @@ def main() -> None:
                     replay_idx = 0
                     replay_tick = 0
                 elif event.key == pygame.K_s:
-                    out_path = Path(__file__).with_name("assets") / "gameplay.png"
-                    out_path.parent.mkdir(parents=True, exist_ok=True)
+                    # 依需求把截圖固定存到同目錄的 game.png
+                    out_path = Path(__file__).with_name("game.png")
                     pygame.image.save(screen, str(out_path))
 
         if replay_mode:
